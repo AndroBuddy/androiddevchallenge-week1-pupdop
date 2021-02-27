@@ -16,7 +16,8 @@
 package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.material.Typography
-import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -94,7 +95,8 @@ val typography = Typography(
     body1 = defaultTypography.body1.copy(
         fontFamily = appFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
+        fontSize = 16.sp,
+        letterSpacing = 0.15.sp
     ),
     body2 = defaultTypography.body2.copy(fontFamily = appFontFamily),
     button = defaultTypography.button.copy(fontFamily = appFontFamily),

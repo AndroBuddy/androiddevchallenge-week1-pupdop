@@ -31,7 +31,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -58,6 +58,7 @@ fun Main() {
     Scaffold {
         Column {
             AppBar()
+            SearchBar()
             Content()
         }
     }
@@ -74,11 +75,54 @@ fun AppBar() {
         Text(text = "Pupdop",
             style = typography.h1
         )
-        Image(
-            painter = painterResource(id = R.drawable.ic_search),
-            colorFilter = ColorFilter.tint(MaterialTheme.colors.onSecondary),
-            contentDescription = null
-        )
+        IconButton(
+            onClick = {},
+            modifier = Modifier.then(Modifier.size(24.dp))
+        ) {
+            Icon(
+                painter = painterResource(id = R.drawable.ic_account),
+                contentDescription = null,
+                tint = Color.Cyan
+            )
+        }
+    }
+}
+
+// Search bar
+@Composable
+fun SearchBar() {
+    Column {
+        Box(
+            modifier = Modifier
+                .padding(horizontal = 24.dp, vertical = 8.dp)
+                .fillMaxWidth()
+                .height(56.dp)
+                .clip(shape = RoundedCornerShape(16.dp))
+                .background(MaterialTheme.colors.onPrimary)
+            ) {
+            Row (
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight()
+                    .padding(horizontal = 16.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                IconButton(
+                    onClick = {},
+                    modifier = Modifier.then(Modifier.size(24.dp))
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_search),
+                        contentDescription = null,
+                        tint = MaterialTheme.colors.onSecondary
+                    )
+                }
+                Text(text = "Search for your 'lil pup",
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.padding(start = 16.dp)
+                )
+            }
+        }
     }
 }
 
@@ -87,15 +131,19 @@ fun AppBar() {
 fun ContentView() {
     Column {
         Box(
-            modifier = Modifier.padding(top = 16.dp, start = 24.dp, end = 24.dp)
+            modifier = Modifier
+                .padding(
+                    top = 16.dp,
+                    start = 24.dp,
+                    end = 24.dp
+                )
                 .fillMaxWidth()
                 .height(100.dp)
-                .clip(shape = RoundedCornerShape(16.dp))
-                .background(Color.Gray)
         ) {
             Column (
                 modifier = Modifier.padding(24.dp).fillMaxWidth(),
-                verticalArrangement = Arrangement.Center
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(text = "Welcome, Clarice!",
                     style = typography.h1,
@@ -112,7 +160,10 @@ fun ContentView() {
 @Composable
 fun Content() {
     val scrollState = rememberLazyListState()
-    LazyColumn(state = scrollState, modifier = Modifier.fillMaxWidth()) {
+    LazyColumn(
+        state = scrollState,
+        modifier = Modifier.fillMaxWidth()
+    ) {
         item { ContentView() }
         item { Adopt() }
         item { BreedChoice() }
@@ -121,30 +172,107 @@ fun Content() {
 
 @Composable
 fun Adopt() {
-    Column {
-        val scrollState = rememberLazyListState()
+    Column(
+        modifier = Modifier.padding(horizontal = 24.dp)
+    ) {
         Text(text = "Adopt a pup",
-            modifier = Modifier.padding(start = 24.dp, end = 24.dp, top = 40.dp, bottom = 24.dp),
+            modifier = Modifier.padding(top = 16.dp),
             style = typography.h2
         )
-        LazyRow(state = scrollState, modifier = Modifier.fillMaxWidth()) {
-            items(4) {
-                Box(
-                    modifier = Modifier.padding(start = 24.dp)
-                        .width(160.dp)
-                        .height(216.dp)
-                        .clip(shape = RoundedCornerShape(16.dp))
-                        .background(Color.Gray)
+        Column(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Box(
+                modifier = Modifier
+                    .padding(
+                        top = 24.dp
+                    )
+                    .height(146.dp)
+                    .clip(shape = RoundedCornerShape(16.dp))
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.challace),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxWidth(),
+                    contentScale = ContentScale.Crop
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth()
+                        .fillMaxHeight()
+                        .padding(24.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.Bottom
                 ) {
-                    Column {
-                        Text(text = "Challace",
-                            modifier = Modifier.padding(24.dp),
-                            style = typography.h2
-                        )
-                        IconButton(
-                            onClick = {}
-                        ) {}
-                    }
+                    Text(text = "Challace",
+                        style = typography.h2,
+                        color = Color.White
+                    )
+                    Text(text = "poodle",
+                        style = typography.body1,
+                        color = Color.White
+                    )
+                }
+            }
+            Box(
+                modifier = Modifier
+                    .padding(
+                        top = 24.dp
+                    )
+                    .height(146.dp)
+                    .clip(shape = RoundedCornerShape(16.dp))
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.buffy),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxWidth(),
+                    contentScale = ContentScale.Crop
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth()
+                        .fillMaxHeight()
+                        .padding(24.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.Bottom
+                ) {
+                    Text(text = "Buffy",
+                        style = typography.h2,
+                        color = Color.White
+                    )
+                    Text(text = "bulldog",
+                        style = typography.body1,
+                        color = Color.White
+                    )
+                }
+            }
+            Box(
+                modifier = Modifier
+                    .padding(
+                        top = 24.dp
+                    )
+                    .height(146.dp)
+                    .clip(shape = RoundedCornerShape(16.dp))
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.doge),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxWidth(),
+                    contentScale = ContentScale.Crop
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth()
+                        .fillMaxHeight()
+                        .padding(24.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.Bottom
+                ) {
+                    Text(text = "Doge",
+                        style = typography.h2,
+                        color = Color.White
+                    )
+                    Text(text = "shiba inu",
+                        style = typography.body1,
+                        color = Color.White
+                    )
                 }
             }
         }
@@ -153,14 +281,16 @@ fun Adopt() {
 
 @Composable
 fun BreedChoice() {
-    Column {
+    Column(
+        modifier = Modifier.padding(bottom = 24.dp)
+    ) {
         val scrollState = rememberLazyListState()
         Text(text = "Choose by Breed",
             modifier = Modifier.padding(start = 24.dp, end = 24.dp, top = 40.dp, bottom = 24.dp),
             style = typography.h2
         )
         LazyRow(state = scrollState, modifier = Modifier.fillMaxWidth()) {
-            items(4) {
+            item {
                 Box(
                     modifier = Modifier.padding(start = 24.dp)
                         .width(160.dp)
@@ -168,9 +298,58 @@ fun BreedChoice() {
                         .clip(shape = RoundedCornerShape(16.dp))
                         .background(Color.Gray)
                 ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.shiba_inu),
+                        contentDescription = null,
+                        modifier = Modifier.fillMaxWidth(),
+                        contentScale = ContentScale.Crop
+                    )
                     Text(text = "Shiba Inu",
                         modifier = Modifier.align(Alignment.Center),
-                        style = typography.h2
+                        style = typography.h2,
+                        color = Color.White
+                    )
+                }
+            }
+            item {
+                Box(
+                    modifier = Modifier.padding(start = 24.dp)
+                        .width(160.dp)
+                        .height(160.dp)
+                        .clip(shape = RoundedCornerShape(16.dp))
+                        .background(Color.Gray)
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.chihuahua),
+                        contentDescription = null,
+                        modifier = Modifier.fillMaxWidth(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Text(text = "Chihuahua",
+                        modifier = Modifier.align(Alignment.Center),
+                        style = typography.h2,
+                        color = Color.White
+                    )
+                }
+            }
+            item {
+                Box(
+                    modifier = Modifier.padding(start = 24.dp, end = 24.dp)
+                        .width(160.dp)
+                        .height(160.dp)
+                        .clip(shape = RoundedCornerShape(16.dp))
+                        .background(Color.Gray)
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.poodle),
+                        contentDescription = null,
+                        modifier = Modifier.fillMaxWidth(),
+                        contentScale = ContentScale.Crop
+                    )
+                    Text(text = "Poodle",
+                        modifier = Modifier.align(Alignment.Center),
+                        style = typography.h2,
+                        color = Color.White
                     )
                 }
             }
