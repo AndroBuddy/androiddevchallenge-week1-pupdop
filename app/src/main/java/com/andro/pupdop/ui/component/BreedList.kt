@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.andro.pupdop.ui.component
 
 import androidx.compose.foundation.Image
@@ -29,7 +44,8 @@ fun BreedList() {
         modifier = Modifier.padding(bottom = 24.dp)
     ) {
         val scrollState = rememberLazyListState()
-        Text(text = "Choose by Breed",
+        Text(
+            text = "Choose by Breed",
             modifier = Modifier.padding(start = 24.dp, end = 24.dp, top = 40.dp, bottom = 24.dp),
             style = typography.h2
         )
@@ -48,7 +64,8 @@ fun BreedList() {
                         modifier = Modifier.fillMaxWidth(),
                         contentScale = ContentScale.Crop
                     )
-                    Text(text = "Shiba Inu",
+                    Text(
+                        text = "Shiba Inu",
                         modifier = Modifier.align(Alignment.Center),
                         style = typography.h2,
                         color = Color.White
@@ -69,7 +86,8 @@ fun BreedList() {
                         modifier = Modifier.fillMaxWidth(),
                         contentScale = ContentScale.Crop
                     )
-                    Text(text = "Chihuahua",
+                    Text(
+                        text = "Chihuahua",
                         modifier = Modifier.align(Alignment.Center),
                         style = typography.h2,
                         color = Color.White
@@ -90,7 +108,8 @@ fun BreedList() {
                         modifier = Modifier.fillMaxWidth(),
                         contentScale = ContentScale.Crop
                     )
-                    Text(text = "Poodle",
+                    Text(
+                        text = "Poodle",
                         modifier = Modifier.align(Alignment.Center),
                         style = typography.h2,
                         color = Color.White

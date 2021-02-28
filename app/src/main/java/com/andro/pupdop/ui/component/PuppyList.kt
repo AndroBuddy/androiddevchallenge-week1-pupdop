@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.andro.pupdop.ui.component
 
 import android.widget.Toast
@@ -30,7 +45,8 @@ fun PuppyList() {
     Column(
         modifier = Modifier.padding(horizontal = 24.dp)
     ) {
-        Text(text = "Adopt a pup",
+        Text(
+            text = "Adopt a pup",
             modifier = Modifier.padding(top = 16.dp),
             style = typography.h2
         )
@@ -45,9 +61,11 @@ fun PuppyList() {
                     )
                     .height(146.dp)
                     .clip(shape = RoundedCornerShape(16.dp))
-                    .clickable(onClick = {
-                        Toast.makeText(context, "Pup woof!", Toast.LENGTH_SHORT).show()
-                    })
+                    .clickable(
+                        onClick = {
+                            Toast.makeText(context, "Pup woof!", Toast.LENGTH_SHORT).show()
+                        }
+                    )
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.challace),
@@ -62,11 +80,13 @@ fun PuppyList() {
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.Bottom
                 ) {
-                    Text(text = "Challace",
+                    Text(
+                        text = "Challace",
                         style = typography.h2,
                         color = Color.White
                     )
-                    Text(text = "poodle",
+                    Text(
+                        text = "poodle",
                         style = typography.body1,
                         color = Color.White
                     )
@@ -79,9 +99,11 @@ fun PuppyList() {
                     )
                     .height(146.dp)
                     .clip(shape = RoundedCornerShape(16.dp))
-                    .clickable(onClick = {
-                        Toast.makeText(context, "Pup woof!", Toast.LENGTH_SHORT).show()
-                    })
+                    .clickable(
+                        onClick = {
+                            Toast.makeText(context, "Pup woof!", Toast.LENGTH_SHORT).show()
+                        }
+                    )
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.buffy),
@@ -96,11 +118,13 @@ fun PuppyList() {
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.Bottom
                 ) {
-                    Text(text = "Buffy",
+                    Text(
+                        text = "Buffy",
                         style = typography.h2,
                         color = Color.White
                     )
-                    Text(text = "bulldog",
+                    Text(
+                        text = "bulldog",
                         style = typography.body1,
                         color = Color.White
                     )
@@ -113,9 +137,11 @@ fun PuppyList() {
                     )
                     .height(146.dp)
                     .clip(shape = RoundedCornerShape(16.dp))
-                    .clickable(onClick = {
-                        Toast.makeText(context, "Pup woof!", Toast.LENGTH_SHORT).show()
-                    })
+                    .clickable(
+                        onClick = {
+                            Toast.makeText(context, "Pup woof!", Toast.LENGTH_SHORT).show()
+                        }
+                    )
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.doge),
@@ -130,11 +156,13 @@ fun PuppyList() {
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.Bottom
                 ) {
-                    Text(text = "Doge",
+                    Text(
+                        text = "Doge",
                         style = typography.h2,
                         color = Color.White
                     )
-                    Text(text = "shiba inu",
+                    Text(
+                        text = "shiba inu",
                         style = typography.body1,
                         color = Color.White
                     )
