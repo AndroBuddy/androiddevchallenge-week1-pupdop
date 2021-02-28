@@ -9,5 +9,9 @@
       or implied. See the License for the specific language governing permissions and limitations under
       the License.
       -->
-    <string name="app_name">AndroidDevChallenge</string>
+    <string name="app_name">Pupdop</string>
+    <string name="search_string">Search for your lil pup</string>
+    <string name="user">Clarice</string>
+    <string name="city">Texas</string>
+    <string name="state">US</string>
 </resources>
