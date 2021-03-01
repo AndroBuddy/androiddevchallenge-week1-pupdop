@@ -152,7 +152,7 @@ fun DetailBody(
                     Icon(
                         imageVector = if (favPup.value) { Icons.Outlined.Favorite } else { Icons.Outlined.FavoriteBorder },
                         contentDescription = "favorite",
-                        tint = if (favPup.value) { Color.Red } else { Color.White }
+                        tint = if (favPup.value) { Color.Red } else { MaterialTheme.colors.onSecondary }
                     )
                 }
             }
