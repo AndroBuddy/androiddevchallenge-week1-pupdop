@@ -14,4 +14,8 @@
     <string name="user">Clarice</string>
     <string name="city">Texas</string>
     <string name="state">US</string>
+
+    <string name="puppy_info">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis scelerisque leo nulla in id. Semper cursus vivamus etiam risus et turpis massa. Elit tempus proin fames egestas a, malesuada. Enim lacinia amet lobortis lobortis purus. Morbi feugiat morbi a curabitur odio vitae egestas nibh nulla. Lacus, odio vestibulum blandit iaculis diam fermentum lacus semper. Imperdiet feugiat feugiat risus, aliquet lorem proin.
+    </string>
 </resources>

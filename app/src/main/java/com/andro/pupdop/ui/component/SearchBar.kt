@@ -27,18 +27,21 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.andro.pupdop.R
+import com.andro.pupdop.ui.theme.PupdopTheme
 
 @Composable
 fun SearchBar() {
@@ -59,22 +62,37 @@ fun SearchBar() {
                     .padding(horizontal = 16.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                IconButton(
-                    onClick = {},
-                    modifier = Modifier.then(Modifier.size(24.dp))
-                ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_search),
-                        contentDescription = null,
-                        tint = MaterialTheme.colors.onSecondary
-                    )
-                }
+                Icon(
+                    imageVector = Icons.Filled.Search,
+                    contentDescription = "search",
+                    modifier = Modifier.size(24.dp)
+                )
                 Text(
                     text = stringResource(id = R.string.search_string),
                     textAlign = TextAlign.Center,
                     modifier = Modifier.padding(start = 16.dp)
                 )
             }
+        }
+    }
+}
+
+@Preview("Light search bar")
+@Composable
+fun LightPreview() {
+    PupdopTheme {
+        Scaffold {
+            SearchBar()
+        }
+    }
+}
+
+@Preview("Dark search bar")
+@Composable
+fun DarkPreview() {
+    PupdopTheme(darkTheme = true) {
+        Scaffold {
+            SearchBar()
         }
     }
 }

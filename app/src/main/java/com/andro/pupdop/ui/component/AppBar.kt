@@ -22,15 +22,19 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.andro.pupdop.R
+import com.andro.pupdop.ui.theme.PupdopTheme
 import com.andro.pupdop.ui.theme.typography
 
 @Composable
@@ -49,10 +53,30 @@ fun AppBar() {
             modifier = Modifier.then(Modifier.size(24.dp))
         ) {
             Icon(
-                painter = painterResource(id = R.drawable.ic_account),
-                contentDescription = null,
+                imageVector = Icons.Outlined.AccountCircle,
+                contentDescription = "user",
                 tint = Color.Cyan
             )
+        }
+    }
+}
+
+@Preview("Light bar")
+@Composable
+fun LightBar() {
+    PupdopTheme {
+        Scaffold {
+            AppBar()
+        }
+    }
+}
+
+@Preview("Dark bar")
+@Composable
+fun DarkBar() {
+    PupdopTheme(darkTheme = true) {
+        Scaffold {
+            AppBar()
         }
     }
 }

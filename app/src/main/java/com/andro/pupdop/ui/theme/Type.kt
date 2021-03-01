@@ -88,7 +88,12 @@ val typography = Typography(
     h4 = defaultTypography.h4.copy(fontFamily = appFontFamily),
     h5 = defaultTypography.h5.copy(fontFamily = appFontFamily),
     h6 = defaultTypography.h6.copy(fontFamily = appFontFamily),
-    subtitle1 = defaultTypography.subtitle1.copy(fontFamily = appFontFamily),
+    subtitle1 = defaultTypography.subtitle1.copy(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 20.sp,
+        letterSpacing = 0.15.sp
+    ),
     subtitle2 = defaultTypography.subtitle2.copy(fontFamily = appFontFamily),
     body1 = defaultTypography.body1.copy(
         fontFamily = appFontFamily,
@@ -96,7 +101,12 @@ val typography = Typography(
         fontSize = 16.sp,
         letterSpacing = 0.15.sp
     ),
-    body2 = defaultTypography.body2.copy(fontFamily = appFontFamily),
+    body2 = defaultTypography.body2.copy(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.Light,
+        fontSize = 20.sp,
+        letterSpacing = 0.15.sp
+    ),
     button = defaultTypography.button.copy(fontFamily = appFontFamily),
     caption = defaultTypography.caption.copy(fontFamily = appFontFamily),
     overline = defaultTypography.overline.copy(fontFamily = appFontFamily)

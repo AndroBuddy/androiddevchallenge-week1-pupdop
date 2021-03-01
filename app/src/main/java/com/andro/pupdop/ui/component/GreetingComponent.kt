@@ -19,14 +19,18 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.andro.pupdop.R
+import com.andro.pupdop.ui.theme.PupdopTheme
 import com.andro.pupdop.ui.theme.typography
 
 @Composable
@@ -37,17 +41,10 @@ fun Greeting(
 ) {
     Column {
         Box(
-            modifier = Modifier
-                .padding(
-                    top = 16.dp,
-                    start = 24.dp,
-                    end = 24.dp
-                )
-                .fillMaxWidth()
-                .height(100.dp)
+            modifier = Modifier.fillMaxWidth()
         ) {
             Column(
-                modifier = Modifier.padding(24.dp).fillMaxWidth(),
+                modifier = Modifier.padding(16.dp).fillMaxWidth(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -58,6 +55,34 @@ fun Greeting(
                 )
                 Text(text = "$city, $state")
             }
+        }
+    }
+}
+
+@Preview("Light greeter")
+@Composable
+fun LightGreet() {
+    PupdopTheme {
+        Scaffold {
+            Greeting(
+                name = stringResource(id = R.string.user),
+                city = stringResource(id = R.string.city),
+                state = stringResource(id = R.string.state)
+            )
+        }
+    }
+}
+
+@Preview("Dark greeter")
+@Composable
+fun DarkGreet() {
+    PupdopTheme(darkTheme = true) {
+        Scaffold {
+            Greeting(
+                name = stringResource(id = R.string.user),
+                city = stringResource(id = R.string.city),
+                state = stringResource(id = R.string.state)
+            )
         }
     }
 }
